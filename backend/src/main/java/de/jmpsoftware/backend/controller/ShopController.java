@@ -41,7 +41,7 @@ public class ShopController {
     }
 
     @GetMapping(path = "/test2")
-    public ResponseEntity<ShopItemData> returnTest2() {
+    public ShopItemData returnTest2() {
 
         ShopItemData item = ShopItemData.builder().name("Milch").count(3).place("Rewe").build();
 
