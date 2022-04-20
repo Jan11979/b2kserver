@@ -37,7 +37,15 @@ public class ShopController {
 
         ShopItemData item = ShopItemData.builder().name("Milch").count(3).place("Rewe").build();
 
-        return ResponseEntity.ok( item);
+        return ResponseEntity.ok( item );
+    }
+
+    @GetMapping(path = "/test2")
+    public ResponseEntity<ShopItemData> returnTest2() {
+
+        ShopItemData item = ShopItemData.builder().name("Milch").count(3).place("Rewe").build();
+
+        return item;
     }
 
 }
