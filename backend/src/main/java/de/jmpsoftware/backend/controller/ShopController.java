@@ -23,13 +23,21 @@ public class ShopController {
     }
 
     @GetMapping(path = "/testlist")
-    public ResponseEntity<List<ShopItemData>> returnAllFixtureNameList() {
+    public ResponseEntity<List<ShopItemData>> returnAllShopList() {
         List<ShopItemData> tmpList = new ArrayList<>();
         tmpList.add(ShopItemData.builder().name("Milch").count(3).place("Rewe").build());
         tmpList.add(ShopItemData.builder().name("Eier").count(6).place("Denns").build());
         tmpList.add(ShopItemData.builder().name("Kaese").count(1).place("Markt").build());
         tmpList.add(ShopItemData.builder().name("Bier").count(3).place("Kiosk").build());
         return ResponseEntity.ok( tmpList);
+    }
+
+    @GetMapping(path = "/test")
+    public ResponseEntity<ShopItemData> returnTest() {
+
+        ShopItemData item = ShopItemData.builder().name("Milch").count(3).place("Rewe").build();
+
+        return ResponseEntity.ok( item);
     }
 
 }
